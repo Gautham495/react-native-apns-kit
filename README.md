@@ -122,12 +122,12 @@ b0f6c67e7e81f9fa5e6c29163ce3a4b7e61d4c390f021f173b7d69c4e6c9c812
 ## ⚙️ Usage
 
 ```tsx
-import APNs from 'react-native-apns';
+import { requestNotificationPermission, getAPNSToken } from 'react-native-apns';
 import { Alert } from 'react-native';
 
 export async function registerForPush() {
   try {
-    const granted = await APNs.requestNotificationPermission();
+    const granted = await requestNotificationPermission();
     if (!granted) {
       Alert.alert(
         'Notifications Disabled',
@@ -136,7 +136,7 @@ export async function registerForPush() {
       return;
     }
 
-    const token = await APNs.getAPNSToken();
+    const token = await getAPNSToken();
     console.log('📲 APNs Token:', token);
 
     // Send to your backend for push targeting
