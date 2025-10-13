@@ -1,6 +1,6 @@
 {
   "name": "react-native-apns-kit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React Native module for iOS APNs permission and token management",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
