@@ -7,7 +7,7 @@ import com.facebook.react.module.annotations.ReactModule
 
 @ReactModule(name = AppAPNsModule.NAME)
 class AppAPNsModule(reactContext: ReactApplicationContext) :
-   NativeModule, TurboModule {
+   NativeAppAPNsSpec(reactContext) {
 
   companion object {
     const val NAME = "AppAPNs"

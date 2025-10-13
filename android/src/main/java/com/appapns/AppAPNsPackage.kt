@@ -7,7 +7,7 @@ import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
 import java.util.HashMap
 
-class appapnsPackage : BaseReactPackage() {
+class AppAPNsPackage : BaseReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
     return if (name == AppAPNsModule.NAME) {
       AppAPNsModule(reactContext)
