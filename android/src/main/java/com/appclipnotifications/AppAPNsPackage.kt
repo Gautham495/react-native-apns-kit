@@ -1,4 +1,4 @@
-package com.appapns
+package com.gautham.appapns
 
 import com.facebook.react.BaseReactPackage
 import com.facebook.react.bridge.NativeModule

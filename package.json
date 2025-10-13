@@ -153,7 +153,7 @@
     "type": "modules",
     "jsSrcsDir": "src",
     "android": {
-      "javaPackageName": "com.appapns"
+      "javaPackageName": "com.gautham.appapns"
     }
   },
   "create-react-native-library": {

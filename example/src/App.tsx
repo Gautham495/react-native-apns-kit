@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Alert } from 'react-native';
 
 import { getAPNSToken, requestNotificationPermission } from 'react-native-apns';
 
 export default function AppAPNsExample() {
-  const [token, setToken] = useState(null);
-  const [permission, setPermission] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
+  const [permission, setPermission] = useState<boolean>(false);
 
   const handleRequest = async () => {
     const granted = await requestNotificationPermission();
@@ -22,7 +22,7 @@ export default function AppAPNsExample() {
         console.log(error);
       }
     } else {
-      alert('Permission Denied!');
+      Alert.alert('Permission Denied!');
     }
   };
 
