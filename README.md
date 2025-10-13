@@ -70,7 +70,7 @@ In your **AppDelegate.swift**, add:
 ```swift
 func application(_ application: UIApplication,
                  didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-  UserDefaults.standard.set(deviceToken, forKey: "AppClipAPNSToken")
+  UserDefaults.standard.set(deviceToken, forKey: "AppAPNSToken")
 }
 
 func application(_ application: UIApplication,

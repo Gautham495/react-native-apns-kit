@@ -5,7 +5,7 @@
 // // === Apple Developer configuration ===
 // const TEAM_ID = process.env.APPLE_TEAM_ID; // Example: "A1B2C3D4E5"
 // const KEY_ID = process.env.APPLE_KEY_ID; // Example: "XYZ12345"
-// const BUNDLE_ID = process.env.APPCLIP_BUNDLE_ID; // Example: "com.yourapp"
+// const BUNDLE_ID = process.env.APP_BUNDLE_ID; // Example: "com.yourapp"
 // const AUTH_KEY_PATH = `./certs/AuthKey_${KEY_ID}.p8`;
 
 // // Generate APNs authentication token (valid 1 hour)

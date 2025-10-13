@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    func application(_ application: UIApplication,
                    didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     // Store token in defaults for RN bridge
-    UserDefaults.standard.set(deviceToken, forKey: "AppClipAPNSToken")
+    UserDefaults.standard.set(deviceToken, forKey: "AppAPNSToken")
     let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
     print("✅ Registered for APNs with token:", tokenString)
   }

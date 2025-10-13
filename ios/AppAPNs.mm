@@ -43,7 +43,7 @@ RCT_EXPORT_METHOD(requestNotificationPermission:(RCTPromiseResolveBlock)resolve
 RCT_EXPORT_METHOD(getAPNSToken:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSData *deviceToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppClipAPNSToken"];
+  NSData *deviceToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppAPNSToken"];
   if (deviceToken) {
     const unsigned char *tokenBytes = (const unsigned char *)[deviceToken bytes];
     NSMutableString *hexToken = [NSMutableString stringWithCapacity:(deviceToken.length * 2)];
