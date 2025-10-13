@@ -1,6 +1,6 @@
 {
-  "name": "react-native-apns",
-  "version": "1.0.1",
+  "name": "react-native-apns-kit",
+  "version": "1.0.0",
   "description": "React Native module for iOS APNs permission and token management",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -32,7 +32,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-apns-example",
+    "example": "yarn workspace react-native-apns-kit-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -47,14 +47,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gautham495/react-native-apns.git"
+    "url": "git+https://github.com/Gautham495/react-native-apns-kit.git"
   },
   "author": "Gautham495 <kinggautham495@gmail.com> (https://github.com/Gautham495)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Gautham495/react-native-apns/issues"
+    "url": "https://github.com/Gautham495/react-native-apns-kit/issues"
   },
-  "homepage": "https://github.com/Gautham495/react-native-apns#readme",
+  "homepage": "https://github.com/Gautham495/react-native-apns-kit#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

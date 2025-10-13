@@ -1,10 +1,10 @@
 <a href="https://gauthamvijay.com">
   <picture>
-    <img alt="react-native-apns" src="./docs/img/banner.png" />
+    <img alt="react-native-apns-kit" src="./docs/img/banner.png" />
   </picture>
 </a>
 
-# react-native-apns
+# react-native-apns-kit
 
 A **React Native TurboModule** that bridges Apple’s **APNs (Apple Push Notification Service)** APIs for iOS.  
 This library lets your React Native app or App Clip **request push-notification permission**, **register with APNs**, and **retrieve the device token** needed to send push notifications from your backend.
@@ -20,7 +20,7 @@ This library lets your React Native app or App Clip **request push-notification 
 ## 📦 Installation
 
 ```
-npm install react-native-apns
+npm install react-native-apns-kit
 ```
 
 Then install pods:
@@ -122,7 +122,7 @@ b0f6c67e7e81f9fa5e6c29163ce3a4b7e61d4c390f021f173b7d69c4e6c9c812
 ## ⚙️ Usage
 
 ```tsx
-import { requestNotificationPermission, getAPNSToken } from 'react-native-apns';
+import { requestNotificationPermission, getAPNSToken } from 'react-native-apns-kit';
 import { Alert } from 'react-native';
 
 export async function registerForPush() {

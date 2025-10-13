@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { View, Text, Button, StyleSheet, Alert } from 'react-native';
 
-import { getAPNSToken, requestNotificationPermission } from 'react-native-apns';
+import { getAPNSToken, requestNotificationPermission } from 'react-native-apns-kit';
 
 export default function AppAPNsExample() {
   const [token, setToken] = useState<string | null>(null);
