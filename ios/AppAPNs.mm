@@ -38,20 +38,15 @@ RCT_EXPORT_METHOD(requestNotificationPermission:(RCTPromiseResolveBlock)resolve
 }
 
 /**
- * Returns the stored APNs device token as a hex string.
+ * Returns the stored APNs device token (hex string).
  */
 RCT_EXPORT_METHOD(getAPNSToken:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSData *deviceToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppAPNSToken"];
-  if (deviceToken) {
-    const unsigned char *tokenBytes = (const unsigned char *)[deviceToken bytes];
-    NSMutableString *hexToken = [NSMutableString stringWithCapacity:(deviceToken.length * 2)];
-    for (NSUInteger i = 0; i < deviceToken.length; i++) {
-      [hexToken appendFormat:@"%02x", tokenBytes[i]];
-    }
-    NSLog(@"📲 Returning stored APNs token: %@", hexToken);
-    resolve(hexToken);
+  NSString *token = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppAPNSToken"];
+  if (token != nil && token.length > 0) {
+    NSLog(@"📲 Returning stored APNs token: %@", token);
+    resolve(token);
   } else {
     NSLog(@"⚠️ No APNs token found in NSUserDefaults. Ensure AppDelegate writes it.");
     reject(@"no_token", @"APNs token not yet available. Call requestNotificationPermission first.", nil);
