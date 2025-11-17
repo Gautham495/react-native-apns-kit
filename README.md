@@ -68,15 +68,21 @@ Recreate/download provisioning profiles so they include the push entitlement and
 In your **AppDelegate.swift**, add:
 
 ```swift
-func application(_ application: UIApplication,
+  func application(_ application: UIApplication,
                  didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-  UserDefaults.standard.set(deviceToken, forKey: "AppAPNSToken")
+    let tokenParts = deviceToken.map { String(format: "%02x", $0) }
+    let token = tokenParts.joined()
+
+    print("✅ APNs Device Token:", token)
+    
+    UserDefaults.standard.set(token, forKey: "AppAPNSToken")
+    UserDefaults.standard.synchronize()
 }
 
 func application(_ application: UIApplication,
-                 didFailToRegisterForRemoteNotificationsWithError error: Error) {
-  print("❌ Failed to register for APNs:", error.localizedDescription)
-}
+                    didFailToRegisterForRemoteNotificationsWithError error: Error) {
+      print("❌ Failed to register for APNs:", error.localizedDescription)
+    }
 ```
 
 > These callbacks are required — they’re how iOS delivers the token back to your app.
@@ -177,34 +183,6 @@ application:didRegisterForRemoteNotificationsWithDeviceToken
 
 and saves the resulting token into `NSUserDefaults` (or App Group if configured)
 so the JS layer can safely retrieve it via TurboModule.
-
----
-
-## 🧱 Example Server Endpoint (Node Express)
-
-```js
-import express from 'express';
-const app = express();
-app.use(express.json());
-
-app.post('/register-token', (req, res) => {
-  const { token } = req.body;
-  console.log('📲 Registered APNs token:', token);
-  res.json({ success: true });
-});
-
-app.listen(3000, () => console.log('✅ Backend running on port 3000'));
-```
-
----
-
-## 📅 Roadmap
-
-- ✅ TurboModule bridge implementation
-- ✅ Works for App Clips and full apps
-- ✅ AppDelegate integration docs
-- 🚧 Add App Group shared storage example
-- 🚧 Add SwiftUI example snippet
 
 ---
 
